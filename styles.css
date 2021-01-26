@@ -1,0 +1,151 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  padding: 30px;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: teal;
+  color: white;
+  z-index: 1;
+}
+
+.navigation {
+  width: 30%;
+  max-width: 250px;
+}
+
+.navigation > ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation__item {
+  cursor: pointer;
+  position: relative;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.subNav {
+padding-top: 10px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  visibility: hidden;
+}
+
+.navigation__item:hover .subNav {
+  visibility: visible;
+}
+
+.subNav li {
+  padding: 5px 0;
+  border: 1px solid gray;
+  background-color: teal;
+  cursor: pointer;
+}
+
+.subNav li:hover {
+  background-color: gray;
+}
+
+.pageTitle {
+  font-size: 2em;
+}
+
+
+.articleContainer {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article {
+  width: 100%;
+  margin-top: 50px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.article__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin: 0 20px 0;
+}
+
+.article__mediaContent {
+  max-height: 250px;
+  overflow: scroll;
+}
+
+.article__title {
+  font-size: 1.5em;
+  position: sticky;
+  padding: 20px 0;
+  top: 0;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.article__image {
+  width: 200px;
+  float: left;
+  margin-right: 20px;
+}
+
+.article__text {
+  line-height: 1.5em;
+}
+
+@media screen and (min-width: 768px) {
+ 
+  .article {
+    overflow: hidden;
+    /* padding-bottom: 20px; */
+  }
+
+  .article__content {
+    margin-bottom: 20px;
+  }
+
+  .article__mediaContent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .article__image {
+    float: none;
+  }
+
+  .article__text {
+    max-height: 200px;
+    overflow: scroll;
+  }
+
+  .article:nth-child(2n + 0) .article__mediaContent {
+    flex-direction: row-reverse;
+  }
+
+  .article:nth-child(2n + 0) .article__image {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+  
+
+}
+
